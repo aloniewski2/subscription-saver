@@ -5,6 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // GitHub Pages serves from /<repo>/; Vercel/Netlify serve from root.
+  base: process.env.GH_PAGES ? "/subscription-saver/" : "/",
   server: {
     host: "::",
     port: 8080,
